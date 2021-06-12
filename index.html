@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav{
+            height:52px;
+            background-color: rgb(24, 20, 20);
+        }
+        .nav li{
+            color:white;
+            float:left;
+            list-style: none;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-family:"宋体";
+        }
+        .nav-left li{
+            width:120px;
+            line-height:52px;
+            font-size:18px;
+        }
+        .nav-left li:nth-child(2){
+            color:orange;
+        }
+        .nav-left li:nth-child(5){
+            width:130px;
+        }
+        .nav-in li{
+            width:90px;
+            line-height:55px;
+            font-size: 15px;
+        }
+        .nav-in li:nth-child(5){
+            font-weight:bold;
+        }
+        .nav-in li:nth-child(6){
+            font-weight:bold;
+        }
+        .nav-in li:nth-child(7){
+            font-weight:bolder;
+        }
+        .nav-in li:nth-child(8){
+            margin-top:15px;
+            margin-left:5px;
+        }
+        .main{
+            width:1200px;
+            height:800px;
+            border-bottom:1px solid #cecaca;
+            margin:50px auto;
+        }
+        .lyrics{
+            float:left;
+            width:600px;
+            height:800px;
+
+        }
+        .topic{
+            width:590px;
+            height:100px;
+            font-size:25px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+        }
+        .intro{
+            width:600px;
+            height:50px;
+            border-bottom:1px solid #999999;
+        }
+        .orange{
+            color:orange;
+        }
+        .intro div{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .part li{
+            height:50px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            list-style: none;
+        }
+        .vision{
+            float:left;
+            width:600px;
+            height:800px;
+        }
+        @keyframes animation1{
+            0%{
+                transform:rotate(0deg);
+            }
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+        .circle{
+            width:310px;
+            height:310px;
+            margin:0 auto;
+            border:1px solid #cecaca;
+            border-radius:50%;
+
+
+        }
+        .circle-img{
+            width:300px;
+            height:300px;
+            border-radius:50%;
+            display:block;
+            margin:5px;
+            animation:animation1 10s linear infinite;
+            background:url(images/yang.jpg);
+            background-size: 100%;
+            display: flex;
+        }
+        .big{
+            width:55px;
+            height:55px;
+            border-radius: 50%;
+            margin-top:125px;
+            margin-left:125px;
+            border: 1px solid #999999;
+            
+        }
+        .small{
+            width:15px;
+            height:15px;
+            border-radius: 50%;
+            background:white;
+            margin:20px;
+            border: 1px solid #999999;
+        }
+        .bar{
+            height:100px;
+            margin-top:50px;
+            padding-top:50px;
+            padding-left:50px;
+        }
+        .bar .btn_play{
+            background: url(images/3.jpg);
+            width: 40px;
+            height: 40px;
+            background-position: -110px 88px;
+            float:left;
+        }
+        .playerMid {
+            float: left;
+            width: 400px;
+            height: 60px;
+            overflow: hidden;
+            position: relative;
+            margin-left:10px;
+            margin-top:7px;
+        }
+        .playerMid #wp_text span {
+            color: #999999;
+        }
+
+        .playerMid #prograssBar {
+            float: left;
+            position: relative;
+            width: 100%;
+            height: 4px;
+            background: #999999;
+            margin: 10px 10px 0 0;
+            display: inline;
+        }
+
+        .playerMid .prograssBar {
+            width: 0px;
+            height: 4px;
+            background: #ffcd2d;
+        }
+
+        .playerMid #wp_processBtn {
+            width: 10px;
+            height: 15px;
+            background: url(images/2.png) 329px 340px;
+            position: absolute;
+            top: -3px;
+        }
+        .time{
+            width:40px;
+            height:50px;
+            float:left;
+            margin-left:5px;
+
+        }
+        .opacity{
+            color:#999999;
+            float:left;
+            display: inline;
+            font-size:12px;
+
+        }
+        #controllBtn{
+            float:left;
+            margin-top:13px;
+            width:25px;
+            height:25px;
+            background: url(images/3.jpg) -43px 88px;
+        }
+        .download{
+            margin:10px auto;
+            width:210px;
+            height:50px;
+            background: #4a269c;
+            border-radius: 20px;
+        }
+        .download>div{
+            float:left;
+        }
+        .down{
+            width:25px;
+            height:35px;
+            margin-left:25px;
+            background: url(images/2.png) 91px 135px;
+        }
+        .load{
+            width:150px;
+            height:50px;
+            line-height:50px;
+            margin-left:10px; 
+        }
+        .bubble{
+            width:500px;
+            height:200px;
+        }
+        .bubble div{
+            float:left;
+        }
+        .avatar{
+            width:60px;
+            height:60px;
+            background: url(images/logo3.png);
+            border-radius: 50%;
+            margin-left:100px;
+            margin-top:30px;
+        }
+        .infor{
+            width:230px;
+            height:60px;
+            border-radius: 20px;
+            background: #adabab;
+            margin-left:10px;
+            margin-top:30px;
+            padding-left:10px;
+            padding-right:10px;
+            line-height:25px;
+
+
+        }
+        .infor-first{
+            color:grey;
+            font-size: 12px;
+        }
+        .infor-second{
+            color:mediumslateblue;
+            font-size:13px;
+        }
+        .infor-last{
+            color:rgb(25, 25, 173);
+            float:right;
+            font-size: 13px;
+        }
+        .comments{
+            width:900px;
+            height:500px;
+            margin:1px auto;
+
+        }
+        .text{
+            height:30px;
+            border-bottom:1px solid #cecaca;
+            padding-left:40px;
+
+        }
+        .text-first{
+            font-size:large;
+        }
+        .count{
+            color:#999999;
+        }
+        .public{
+            width:900px;
+            height:290px;
+        }
+        .public div{
+            float:left;
+        }
+        .public-avatar{
+            background:url(images/logo3.png);
+            width:50px;
+            height:50px;
+            margin-top:10px;
+            margin-left:40px;
+        }
+        .public_comment{
+            margin-top:10px;
+            margin-left:20px;
+            border:1px solid #cecaca;
+            width:750px;
+            height:200px;
+        }
+        .public_comment-input-placeholder{
+            color:#999999;
+
+        }
+        .public-last{
+            width:900px;
+            height:100px;
+            margin-top:5px;
+            
+        }
+        .public-last div{
+            float:right;
+        }
+        .sub-text{
+            margin-right:20px;
+            height:30px;
+            line-height: 30px;
+            font-size:12px;
+
+        }
+        .sub{
+            margin-right:40px;
+            width:80px;
+            height:30px;
+            background: rgb(219, 156, 39);
+            text-align: center;
+            line-height: 30px;
+            color:white;
+        }
+        .record{
+            width:900px;
+            height:500px;
+
+        }
+        .record-text{
+            margin-left:20px;
+            font-size:18px;
+        }
+        #record_content{
+            width:900px;
+            height:370px;
+            border-top:1px solid #cecaca;
+            margin-top:10px;
+            overflow: hidden;
+        }
+        #record_first{
+            width:900px;
+            height:120px;
+            border-bottom:1px solid #cecaca;
+        }
+        .record_first div{
+            float:left;
+        }
+        .record-picture{
+            width:50px;
+            height:50px;
+            margin-left:20px;
+            background: url(images/logo3.png);
+            margin-top:25px;
+
+        }
+        .record-infor{
+            width:700px;
+            height:80px;
+            margin-top:25px;
+            margin-left:20px;
+        }
+        .name{
+            height:20px;
+            width:700px;
+            color:coral;
+            font-size:14px;
+
+        }
+        .talk{
+            height:40px;
+            width:700px;
+            font-size:13px;
+
+        }
+        .record_time{
+            width:700px;
+            color:#999999;
+            font-size:10px;
+            height:40px;
+
+        }
+        .operate{
+            width:100px;
+            height:80px;
+            margin-top:25px;
+            float:left;
+        }
+        .share{
+            font-size:12px;
+            height:50px;
+            padding-left:70px;
+        }
+        .delete{
+            font-size:14px;
+            padding-top:10px;
+        }
+        .page{
+            width:900px;
+            height:100px;
+            margin-top:300px;
+            margin-left:300px;
+            padding-left:150px;
+        }
+        .page div{
+            width:30px;
+            height:30px;
+            line-height:30px;
+            border-radius: 50%;
+            background: #e2dede;
+            float:left;
+            margin-left:10px;
+            text-align:center;
+        }
+
+        .page div:nth-child(1){
+            color:#999999;
+        }
+        .page div:nth-child(2){
+            color:white;
+            background: orange;
+        }
+        .page div:nth-child(7){
+            color:#999999;
+        }
+        .page div:nth-child(5){
+            background: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="nav">
+            <ul class="nav-left">
+                <li><img src="images/logo.jpg"/></li>
+                <li>首页</li>
+                <li>榜单</li>
+                <li>歌手</li>
+                <li>下载酷我客户端</li>
+            </ul>
+            <ul class="nav-in">
+                <li>☆美女秀</li>
+                <li>☆酷我耳机</li>
+                <li>☆VIP会员</li>
+                <li>☆i听</li>
+                <li>更多服务</li>
+                <li>登录</li>
+                <li>^</li>
+                <li><img src="images/search.png"></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="lyrics">
+                <div class="topic">
+                    喜羊羊
+                </div>
+                <div class="intro">
+                    <div class="intro-first">专辑：&nbsp;<span class="orange">儿歌大全</span>&nbsp;歌手：&nbsp;<span class="orange">华语群星</span>&nbsp;分享&nbsp;<img src="images/1.jpg"/>&nbsp;<span class="orange">&nbsp;评论</span></div>
+                    <div class="intro-second">上传时间：2015-10-02 歌曲来源：民大相思湖网球社</div>
+                </div>
+                <div class="part">
+                    <ul>
+                        <li>在所有天气都拥有大笑的力量</li>
+                        <li>虽然我只是一只羊</li>
+                        <li>虽然我只是一只羊</li>
+                        <li>喜羊羊 美羊羊 懒羊羊 沸羊羊</li>
+                        <li>慢羊羊 软绵绵 红太狼 灰太狼</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vision">
+                <div class="circle">
+                    <div class="circle-img">
+                        <div class="big">
+                            <div class="small"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="btn_play" id="btn_play">
+                        <audio autoplay="autoplay" id="mymusic">
+                            <source src="images/2.mp3"></source>
+                        </audio>
+                    </div>
+                    <div class="playerMid">
+                        <div id="prograssBar">
+                            <div id="wp_bufBar">
+                                <div class="prograssBar" id="wp_processBar"></div>
+                                <a href="##" class="schedule_btn" id="wp_processBtn" style="left: 0;"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <p id="wp_playTime" class="opacity">00.00</p>
+                    </div>
+                    <div id="controllBtn"></div>
+                </div>
+                <div class="download">
+                    <div class="down"></div>
+                    <div class="load">免费下载这首歌</div>
+                </div>
+                <div class="bubble">
+                    <div class="avatar"></div>
+                    <div class="infor">
+                        <span class="infor-first">郭子仪——H5班</span>
+                        <br/>
+                        <span class="infor-second">喜羊羊与灰太狼</span>
+                        <span class="infor-last">去现场></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comments">
+            <div class="text">
+                <span class="text-first">评论</span>
+                <span class="count">1703条评论</span>
+            </div>
+            <div class="public">
+                <div class="public-avatar"></div>
+                <div>
+                    <textarea placeholder="分享你的音乐见解" clos="10" rows="3" class="public_comment" id="public_comment"></textarea>
+                </div>
+                <div class="public-last">
+                    <div id="sub"><button class="sub" >评论</button></div>
+                    <div class="sub-text">已输入0个字</div>
+                </div>
+            </div>
+            <div class="record">
+                <div class="record-text">精彩评论</div>
+                <div id="record_content">
+                    <div class="record_first" id="record_first">
+                        <!-- <div class="record-picture"></div>
+                        <div class="record-infor">
+                            <div class="name">郭子仪</div>
+                            <div class="talk">Too</div>
+                            <div class="record_time">2017-06-10 07:00:42</div>
+                        </div>
+                        <div class="operate">
+                            <div class="share">分享</div>
+                            <div class="delete">删除&nbsp;163&nbsp;回复</div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="page">
+            <div id="left"><</div>
+            <div id="first">1</div>
+            <div id="second">2</div>
+            <div id="third">3</div>
+            <div>...</div>
+            <div id="seventeen">17</div>
+            <div id="right">></div>
+        </div>
+    </div>
+</body>
+<script>
+    var mymusic = document.getElementById("mymusic")
+    var btn_play = document.getElementById("btn_play")
+    var controllBtn = document.getElementById("controllBtn")
+    var sub = document.getElementById("sub");
+    var record_first = document.getElementById("record_first")
+    var firstCount = 1;
+    function add0(n){
+        return n<10?'0'+n:n;
+    }
+    btn_play.onclick = function(){
+        firstCount++;
+        if(firstCount%2==0){
+            mymusic.play();
+            btn_play.style.background = 'url(images/3.jpg)';
+            btn_play.style.width = 40 + 'px';
+            btn_play.style.height = 40 + 'px';
+            btn_play.style.backgroundPosition = "-"+207+'px'+' '+ 88+'px';
+            var timeId = setInterval(function(){
+                wp_processBar.style.width = 400*mymusic.currentTime/mymusic.duration + 'px';
+                wp_processBtn.style.left = mymusic.currentTime/mymusic.duration*100 + '%';
+        
+                var currenttime = Math.floor(mymusic.currentTime);
+                if(currenttime < 60){
+                    wp_playTime.innerHTML = "00:" + add0(currenttime);
+                }else{
+                    var minute = Math.floor(mymusic.currentTime/60);
+                    var second = Math.floor(mymusic.currentTime%60);
+                    wp_playTime.innerHTML = add0(minute) + ':' + add0(second);
+                }
+            },1000)
+        }else{
+            mymusic.pause();
+            btn_play.style.background = 'url(images/3.jpg)';
+            btn_play.style.width = 40+'px';
+            btn_play.style.height = 40+'px';
+            btn_play.style.backgroundPosition = '-'+110+'px'+' '+88+'px';
+        }
+        var secondCount = 1;
+        controllBtn.onclick = function(){
+            secondCount++;
+            if(secondCount%2==0){
+                mymusic.muted = true;
+            }else{
+                mymusic.muted = false;
+            }
+        }
+    }
+    var public_comment = document.getElementById("public_comment")
+    function add0(n){
+		return n<10?'0'+n:n;
+	}
+    sub.onclick = function(){
+        var myDate = new Date();
+        var time = myDate.getFullYear() + '-' + (myDate.getMonth()+1) + '-' + myDate.getDate() + '  ' + add0(myDate.getHours()) + ':' + add0(myDate.getMinutes()) + ':' + add0(myDate.getSeconds());
+		var noteList = localStorage["noteList"];
+        if(noteList == "" || noteList == null || noteList == undefined) {
+            localStorage["noteList"] = "[]";
+        }
+        noteList = JSON.parse(localStorage["noteList"]);
+        var noteObj = {
+            "content":public_comment.value,
+            "time":time
+        }
+		noteList.push(noteObj);
+        localStorage['noteList'] = JSON.stringify(noteList);
+        public_comment.value = "";
+        
+        record_first.innerHTML +=
+        "<div class='record_first' id='record_first'>"
+            +"<div class='record-picture'>"+"<div/>"
+            +"<div style='width:700px;height:80px;margin-top:5px;margin-left:70px;'>"
+                +"<div class='name'>" + '郭子仪' + "</div>"
+                +"<div class='talk'>"+public_comment.value+"</div>"
+                +"<div class='record_time'>"+time+"</div>"
+            +"</div>"
+        +"</div>";
+        
+    }
+
+
+    function getnode(){
+        if(localStorage['noteList']){
+            var noteList = localStorage['noteList'];
+            var noteList = JSON.parse(noteList);
+            for(var i = 0; i < noteList.length; i++){
+                record_first.innerHTML +=
+                    "<div class='record_first' id='record_first'>"
+                        +"<div class='record-picture'>"+"<div/>"
+                        +"<div style='width:700px;height:80px;margin-top:5px;margin-left:70px;'>"
+                            +"<div class='name'>" + '郭子仪' + "</div>"
+                            +"<div class='talk'>"+noteList[i].content+"</div>"
+                            +"<div class='record_time'>"+noteList[i].time+"</div>"
+                        +"</div>"
+                        // +"<div class='operate'>"
+                        //      +"<div class='share'>" + '分享' + "</div>"
+                        //      +"<div class='delete'>"+'删除'+"&nbsp;"+'163'+"&nbsp;"+'回复'+"</div>"+
+                        // +"</div>"
+                    +"</div>";
+            }
+        }
+    }
+    window.onload = function(){
+        getnode();
+    }
+    var record_content = document.getElementById("record_content")
+    var page = document.getElementById("page").getElementsByTagName('div');
+    var left = document.getElementById("left");
+    var right = document.getElementById("right");
+    var first = document.getElementById("first");
+    var second = document.getElementById("second");
+    var third = document.getElementById("third");
+    var seventeen = document.getElementById("seventeen");
+
+    function first_option(){
+        page[1].style.background = 'orange'
+        page[1].style.color = 'white';
+        page[2].style.background = '#e2dede'
+        page[2].style.color = '#999999';
+        page[3].style.background = '#e2dede'
+        page[3].style.color = '#999999';
+        page[5].style.background = '#e2dede'
+        page[5].style.color = '#999999';
+
+        var noteList = localStorage['noteList'];
+        var noteList = JSON.parse(noteList);
+        record_first.innerHTML="";
+        for(var i = 0; i < noteList.length; i++){
+            record_first.innerHTML +=
+                "<div class='record_first' id='record_first'>"
+                    +"<div class='record-picture'>"+"<div/>"
+                    +"<div style='width:700px;height:80px;margin-top:5px;margin-left:70px;'>"
+                        +"<div class='name'>" + '郭子仪' + "</div>"
+                        +"<div class='talk'>"+noteList[i].content+"</div>"
+                        +"<div class='record_time'>"+noteList[i].time+"</div>"
+                    +"</div>"
+                +"</div>";
+        }
+    }
+    function second_option(){
+        page[1].style.background = '#e2dede'
+        page[1].style.color = '#999999';
+        page[3].style.background = '#e2dede'
+        page[3].style.color = '#999999';
+        page[2].style.background = 'orange'
+        page[2].style.color = 'white';
+        page[5].style.background = '#e2dede'
+        page[5].style.color = '#999999';
+        var noteList = localStorage['noteList'];
+        var noteList = JSON.parse(noteList);
+        record_first.innerHTML="";
+        for(var i = 3; i < noteList.length; i++){
+            record_first.innerHTML +=
+                "<div class='record_first' id='record_first'>"
+                    +"<div class='record-picture'>"+"<div/>"
+                    +"<div style='width:700px;height:80px;margin-top:5px;margin-left:70px;'>"
+                        +"<div class='name'>" + '郭子仪' + "</div>"
+                        +"<div class='talk'>"+noteList[i].content+"</div>"
+                        +"<div class='record_time'>"+noteList[i].time+"</div>"
+                    +"</div>"
+                +"</div>";
+        }
+    }
+    function third_option(){
+        page[1].style.background = '#e2dede'
+        page[1].style.color = '#999999';
+        page[2].style.background = '#e2dede'
+        page[2].style.color = '#999999';
+        page[3].style.background = 'orange'
+        page[3].style.color = 'white';
+        page[5].style.background = '#e2dede'
+        page[5].style.color = '#999999';
+        var noteList = localStorage['noteList'];
+        var noteList = JSON.parse(noteList);
+        record_first.innerHTML="";
+        for(var i = 6; i < noteList.length; i++){
+            record_first.innerHTML +=
+                "<div class='record_first' id='record_first'>"
+                    +"<div class='record-picture'>"+"<div/>"
+                    +"<div style='width:700px;height:80px;margin-top:5px;margin-left:70px;'>"
+                        +"<div class='name'>" + '郭子仪' + "</div>"
+                        +"<div class='talk'>"+noteList[i].content+"</div>"
+                        +"<div class='record_time'>"+noteList[i].time+"</div>"
+                    +"</div>"
+                +"</div>";
+        }
+    }
+    function seventeen_option(){
+        page[1].style.background = '#e2dede'
+        page[1].style.color = '#999999';
+        page[2].style.background = '#e2dede'
+        page[2].style.color = '#999999';
+        page[3].style.background = '#e2dede'
+        page[3].style.color = '#999999';
+        seventeen.style.background = 'orange'
+        seventeen.style.color = 'white';
+        var noteList = localStorage['noteList'];
+        var noteList = JSON.parse(noteList);
+        record_first.innerHTML="";
+        for(var i = (17-1)*3; i < noteList.length; i++){
+            record_first.innerHTML +=
+                "<div class='record_first' id='record_first'>"
+                    +"<div class='record-picture'>"+"<div/>"
+                    +"<div style='width:700px;height:80px;margin-top:5px;margin-left:70px;'>"
+                        +"<div class='name'>" + '郭子仪' + "</div>"
+                        +"<div class='talk'>"+noteList[i].content+"</div>"
+                        +"<div class='record_time'>"+noteList[i].time+"</div>"
+                    +"</div>"
+                +"</div>";
+        }
+    }
+    page[1].onclick = function(){
+        first_option();
+    }
+    page[2].onclick = function(){
+        second_option();
+    }
+    page[3].onclick = function(){
+        third_option();
+    }
+    page[5].onclick = function(){
+        seventeen_option();
+    }
+
+    var right_count=0;
+    page[6].onclick = function(){
+        var noteList = localStorage['noteList'];
+        var noteList = JSON.parse(noteList);
+        for(var i=0;i<noteList.length;i++){
+            if(record_first.innerHTML = "<div class='record_first' id='record_first'>"
+                    +"<div class='record-picture'>"+"<div/>"
+                    +"<div style='width:700px;height:80px;margin-top:5px;margin-left:70px;'>"
+                        +"<div class='name'>" + '郭子仪' + "</div>"
+                        +"<div class='talk'>"+noteList[i].content+"</div>"
+                        +"<div class='record_time'>"+noteList[i].time+"</div>"
+                    +"</div>"
+                +"</div>"){
+                    var num=i;
+                    record_first.innerHTML="";
+                    for(var i = (num-1)*3+3; i < noteList.length; i++){
+                        console.log(num);
+                        record_first.innerHTML +=
+                            "<div class='record_first' id='record_first'>"
+                                +"<div class='record-picture'>"+"<div/>"
+                                +"<div style='width:700px;height:80px;margin-top:5px;margin-left:70px;'>"
+                                    +"<div class='name'>" + '郭子仪' + "</div>"
+                                    +"<div class='talk'>"+noteList[i].content+"</div>"
+                                    +"<div class='record_time'>"+noteList[i].time+"</div>"
+                                +"</div>"
+                            +"</div>";
+                        }
+                    
+                }
+        }
+        right_count++;
+        if(right_count==1){
+            second_option();
+        }
+        else if(right_count==2){
+            third_option();
+        }
+    }
+
+
+    
+    
+
+</script>
+</html>
